@@ -17,7 +17,7 @@ def main():
               Fore.WHITE+":" + Fore.CYAN+"~" + Fore.WHITE+"Enter Token: " + Fore.WHITE+" ")
 
     headers = {'Authorization': token}
-    y = r('https://discord.com/api/v9/users/@me/billing/payment-sources', headers=headers).json()
+    y = r('https://discord.com/api/v9/users/@me', headers=headers).json()
     try:
         if 'verify' in y['message'].lower():
             print(f'{Fore.MAGENTA}[{Fore.WHITE}Error{Fore.MAGENTA}]{Fore.WHITE}: Your account requires verification. Please try a different token.')
